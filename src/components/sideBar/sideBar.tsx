@@ -5,7 +5,7 @@ export function SideBar() {
   return (
     <div className="bg-white w-64">
       <div className="px-8 py-6 ">
-        <h2 className="font-bold text-2xl">Stock</h2>
+        <h2 className="font-bold text-2xl text-green-700">Stock</h2>
       </div>
       <div className="flex flex-col gap-2 p-2">
         <SideBarButton href="/">
