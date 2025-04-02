@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "DashBoard de Vendas",
   description:
     "Aplicação desenvolvida para fins de estudo da ferramenta Next.js",
+  icons: "favicon.png",
 };
 
 export default function RootLayout({

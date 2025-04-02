@@ -2,10 +2,10 @@ import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { DataTable } from "@/components/ui/dataTable";
 import { columnsTableProduct } from "./_components/tabelaProdutos";
-import { db } from "../_lib/prisma";
+import { getProducts } from "../_data-access/produto/get-produtos";
 
 export default async function Produtos() {
-  const produtos = await db.product.findMany({});
+  const produtos = await getProducts();
   return (
     <div className="w-full space-y-5 p-8 bg-white m-7 rounded-2xl">
       <div className="flex justify-between">
@@ -20,7 +20,10 @@ export default async function Produtos() {
           Novo Produto
         </Button>
       </div>
-      <DataTable columns={columnsTableProduct} data={produtos} />
+      <DataTable
+        columns={columnsTableProduct}
+        data={JSON.parse(JSON.stringify(produtos))}
+      />
     </div>
   );
 }
